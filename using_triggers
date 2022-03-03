@@ -1,0 +1,31 @@
+Public bool interactable = false;
+Private Animator anim;
+
+Void Start()
+{
+	Anim = GetComponent<Animator>();
+}
+
+Void onTriggerEnter(Collider other)
+{
+	if(other.gameObject.tag == “player”)
+	{
+		Interactable = true;
+	}
+}
+
+Void onTriggerExit(Collider other)
+{
+	if(other.gameObject.tag == “player”)
+	{
+		Interactable = false;
+	}
+}
+
+Void Update()
+{
+	if (interactable == true && Input.GetKeyDown(keyCode.Space))
+	{
+		anim.SetBool(“openChest”, true);
+	}
+}
