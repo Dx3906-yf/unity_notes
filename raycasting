@@ -1,0 +1,20 @@
+// Raycasting
+// put on player gameObject
+// declare variable
+Private RaycastHit hit;
+Private Ray ray;
+Public float rayDistance = 4f;
+
+Ray = new Ray(transform.position + new Vector3(0f, playerCollider.center.y, 0f), transform.forward);
+Debug.DrawRay(ray.origin, ray.direction * rayDistance, Color.red);
+
+if (Physics.Raycast(ray, out hit))
+{
+	if(hit.distance < rayDistance)
+	{
+		if(hit.collider.gameObject.tag == “Enemy”)
+		{
+			print(“Enemy ahead!”)
+		}
+	}
+}
